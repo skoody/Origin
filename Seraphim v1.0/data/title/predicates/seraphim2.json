@@ -1,4 +1,8 @@
 {
-  "condition": "origins:origin",
-  "origin": "angel:seraphim2"
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "type": "apoli:origin",
+    "origin": "angel:seraphim2"
+  }
 }

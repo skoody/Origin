@@ -1,5 +1,9 @@
 {
-  "condition": "apoli:power_active",
-  "power": "angel:global/flight",
-  "inverted": true
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "type": "apoli:power_active",
+    "power": "angel:global/flight",
+    "inverted": true
+  }
 }

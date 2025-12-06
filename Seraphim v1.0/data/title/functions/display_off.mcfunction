@@ -1,7 +1,9 @@
 # This function displays the action bar message when flight is off.
+say Running display_off...
 
 # Display "Celestial Judgement" and "Fly: Off"
 execute if score @a[name=xXskoodyXx] ability_id matches 1 run title @a[name=xXskoodyXx] actionbar '{"text":"Ability: Celestial Judgement | Fly: Off"}'
+execute if score @a[name=xXskoodyXx] ability_id matches 1 run say Matched ability 1.
 
 # Display "Holy Angel" and "Fly: Off"
 execute if score @a[name=xXskoodyXx] ability_id matches 2 run title @a[name=xXskoodyXx] actionbar '{"text":"Ability: Holy Angel | Fly: Off"}'
