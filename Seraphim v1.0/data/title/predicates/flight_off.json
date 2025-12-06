@@ -1,0 +1,5 @@
+{
+  "condition": "apoli:power_active",
+  "power": "angel:global/flight",
+  "inverted": true
+}
