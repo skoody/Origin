@@ -1,0 +1,4 @@
+{
+  "condition": "origins:power_active",
+  "power": "angel:global/flight"
+}
