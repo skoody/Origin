@@ -1,0 +1,29 @@
+{
+    "name": "Celestial judgement",
+    "description": "Your divine wrath brings judgment down to those you deem unworthy. Fire arrow from your wings in a shotgun blast dealing 7 damage per arrow again undead mobs and 4 damage against passive mobs",
+    "type": "origins:multiple",
+    "arrow": {
+        "type": "origins:fire_projectile",
+        "entity_type": "minecraft:spectral_arrow",
+        "cooldown": 80,
+        "speed": 4,
+        "divergence": 12,
+        "count": 10,
+        "hud_render": {
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 14,
+            "should_render": true
+        },
+        "tag": "{pickup:0b}",
+        "key": {
+            "key": "key.origins.primary_active",
+            "continuous": true
+        },
+        "condition": {
+            "type": "origins:resource",
+            "compare_to": 500,
+            "comparison": ">=",
+            "resource": "angel:global/holiness"
+        }
+    }
+}

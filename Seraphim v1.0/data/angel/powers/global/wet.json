@@ -1,0 +1,34 @@
+{
+	"name": "Water Weakness",
+	"description": "You have 6 wings, that's a lot of feathers. You move 40% slower in flight and walking when wet. It takes 40 seconds after being wet to regain speed",
+	"type": "origins:action_over_time",
+	"entity_action": {
+		"type": "origins:apply_effect",
+		"effect": {
+			"effect": "minecraft:slowness",
+			"duration": 40,
+			"amplifier": 1,
+			"show_particles": false,
+			"show_icon": false
+		}
+	},
+	"interval": 1,
+	"condition": {
+        "type": "origins:or",
+        "conditions": [
+            {
+                "type": "origins:in_block",
+                "block_condition": {
+                    "type": "origins:block",
+                    "block": "minecraft:water"
+                }
+            },
+            {
+                "type": "origins:swimming"
+            },
+            {
+                "type": "origins:in_rain"
+            }
+        ]
+    }
+}

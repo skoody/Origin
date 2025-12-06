@@ -1,0 +1,31 @@
+{
+    "name": "Hell's Anger",
+    "description": "Hell is angry with your presence there, lose 5 max hearts and take 20% more fire damage when in the neither.",
+    "type": "origins:multiple",
+    "health": {
+        "condition": {
+            "type": "origins:dimension",
+            "dimension": "minecraft:nether"
+        },
+        "type": "origins:attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.max_health",
+            "operation": "addition",
+            "value": -10
+        }
+    },
+    "fire_dmg": {
+        "condition": {
+            "type": "origins:dimension",
+            "dimension": "minecraft:nether"
+        },
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:fire"
+        },
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 20
+        }
+    }
+}

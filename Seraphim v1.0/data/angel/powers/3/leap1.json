@@ -1,0 +1,50 @@
+{
+    "hidden": true,
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:or",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "angel:3/leap",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "angel:3/ride2",
+                        "comparison": "<=",
+                        "compare_to": 58
+                    }
+                ]
+            },
+            {
+                "type": "origins:on_block",
+                "block_condition": {
+                    "inverted": true,
+                    "type": "origins:block",
+                    "block": "air"
+                }
+            }
+        ]
+    },
+    "type": "origins:action_over_time",
+    "interval": 2,
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:set_resource",
+                "resource": "angel:3/leap",
+                "value": 2
+            },
+            {
+                "type": "origins:set_resource",
+                "resource": "angel:3/ride2",
+                "value": 59
+            }
+        ]
+    }
+}

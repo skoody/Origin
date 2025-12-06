@@ -1,0 +1,26 @@
+{
+	"powers": [
+		"angel:global/angelic",
+		"angel:global/nightvision",
+		"angel:global/flight",
+		"angel:global/holiness",
+		"angel:global/strength",
+		"angel:2/celestial",
+		"angel:2/light",
+		"angel:global/flesh",
+		"angel:global/wet",
+		"angel:global/hell",
+		"angel:global/villager",
+		"angel:global/prices",
+		"angel:global/damage",
+		"angel:global/regen1",
+		"angel:global/regen2",
+		"angel:global/credits"
+	],
+	"icon": "minecraft:feather",
+	"order": 10,
+	"impact": 3,
+	"name": "Seraphim",
+	"description": "You are a Seraphim sent down to cleanse the world at your leisure. You have taken on a human form to not scare Villagers but it only works so much",
+	"unchoosable": true
+}

@@ -1,0 +1,16 @@
+{
+    "type": "origins:action_on_item_use",
+    "entity_action": {
+        "type": "origins:damage",
+        "amount": 1000000,
+        "damage_type": "wither"
+    },
+    "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+            "item": "minecraft:rotten_flesh"
+        }
+    },
+    "description": "You are Holy and Pure rotten flesh will kill you instantly upon eating",
+    "name": "Unholy Food"
+}

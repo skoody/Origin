@@ -1,0 +1,45 @@
+{
+    "name": "Leap",
+    "description": "Launch yourself forward at high speeds",
+    "condition": {
+        "type": "origins:resource",
+        "resource": "angel:3/leap",
+        "comparison": "==",
+        "compare_to": 2
+    },
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:add_velocity",
+                "x": 0,
+                "y": 0,
+                "z": 1,
+                "space": "local",
+                "client": true,
+                "server": true
+            },
+            {
+                "type": "origins:delay",
+                "action": {
+                    "type": "origins:set_resource",
+                    "resource": "angel:3/leap",
+                    "value": 1
+                },
+                "ticks": 1
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:poof ~ ~ ~ 1 .1 1 .01 100"
+            }
+        ]
+    },
+    "cooldown": 10,
+    "hud_render": {
+        "should_render": false
+    },
+    "key": {
+        "key": "key.origins.primary_active"
+    }
+}

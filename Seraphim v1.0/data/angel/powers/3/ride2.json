@@ -1,0 +1,19 @@
+{
+    "hidden": true,
+    "type": "origins:resource",
+    "min": 0,
+    "max": 29,
+    "start_value": 29,
+    "hud_render": {
+        "should_render": true,
+        "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+        "bar_index": 5,
+        "condition": {
+            "inverted": true,
+            "type": "origins:resource",
+            "resource": "angel:3/ride2",
+            "comparison": "==",
+            "compare_to": 29
+        }
+    }
+}

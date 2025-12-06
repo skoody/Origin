@@ -1,0 +1,31 @@
+{
+    "hidden": true,
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "scoreboard objectives add ride dummy"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "scoreboard players set @p ride 10"
+            }
+        ]
+    },
+    "execute_chosen_when_orb": true,
+    "entity_action_respawned": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "scoreboard objectives add ride dummy"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "scoreboard players set @p ride 10"
+            }
+        ]
+    }
+}

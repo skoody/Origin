@@ -1,0 +1,16 @@
+{
+	"name": "Seraphim Strength",
+	"description": "You are a Seraphim, your existence is unbelievable and the power you hold shows it. You have permanent strength 3 and night vision",
+	"type": "origins:action_over_time",
+	"entity_action": {
+		"type": "origins:apply_effect",
+		"effect": {
+			"effect": "minecraft:strength",
+			"duration": 5,
+			"amplifier": 2,
+			"show_particles": false,
+			"show_icon": false
+		}
+	},
+	"interval": 1
+}

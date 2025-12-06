@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "origins": [
+    "angel:seraphim1",
+    "angel:seraphim2",
+    "angel:seraphim3",
+    "angel:seraphim4"
+  ]
+}

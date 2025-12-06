@@ -1,0 +1,9 @@
+{
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+        "operation": "addition",
+        "value": 3
+    },
+    "description": "The corruption of this world taints you, take 30% more damage from all mobs",
+    "name": "Corruption"
+}

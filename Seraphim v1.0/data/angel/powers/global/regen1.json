@@ -1,0 +1,14 @@
+{
+	"name": "Seraphim Light",
+	"description": "You regenerate your holy power when under the light of the sun",
+	"type": "origins:action_over_time",
+	"entity_action": {
+		"type": "origins:change_resource",
+		"change": 500,
+		"resource": "angel:global/holiness"
+	},
+	"interval": 100,
+	"condition": {
+		"type": "origins:exposed_to_sun"
+	}
+}

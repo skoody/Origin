@@ -1,0 +1,83 @@
+{
+    "name": "Holy Angel",
+    "description": " Undead mobs can sense your holy presence making them cower in fear of your judgement",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "The mobs that your immune to are zombies, skeletons, wither skeletons, vexes, zoglins, drowneds, zombie villagers and zombified piglins",
+            "sprite": "origins:textures/gui/badge/info.png"
+        }
+    ],
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "team add undead"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "team modify undead seeFriendlyInvisibles false"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "team join undead @s"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "team join undead @e[type=minecraft:zombie]"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "team join undead @e[type=minecraft:skeleton]"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "team join undead @e[type=minecraft:skeleton_horse]"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "team join undead @e[type=minecraft:wither_skeleton]"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "team join undead @e[type=minecraft:vex]"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "team join undead @e[type=minecraft:zoglin]"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "team join undead @e[type=minecraft:drowned]"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "team join undead @e[type=minecraft:zombie_horse]"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "team join undead @e[type=minecraft:zombified_piglin]"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "team join undead @e[type=minecraft:zombie_villager]"
+            }
+        ]
+    }
+}

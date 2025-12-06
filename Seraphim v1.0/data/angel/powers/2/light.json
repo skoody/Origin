@@ -1,0 +1,119 @@
+{
+    "name": "Holy Angel",
+    "description": "Shine brightly with your holy light blinding anything nearby",
+    "condition": {
+        "type": "origins:resource",
+        "compare_to": 500,
+        "comparison": ">=",
+        "resource": "angel:global/holiness"
+    },
+    "type": "origins:multiple",
+    "active": {
+        "type": "origins:active_self",
+        "key": "key.origins.primary_active",
+        "cooldown": 200,
+        "hud_render": {
+            "should_render": true,
+            "bar_index": 1,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png"
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "function angel:light_vfx"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute anchored eyes rotated ~ 0 run summon area_effect_cloud ^ ^-1 ^2 {Duration:2,Radius:0.01,Particle:'block air',Tags:['angel.light_marker']}"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "tag @s add angel.immunetolighting"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "change": -500,
+                    "resource": "angel:global/holiness"
+                },
+                {
+                    "type": "origins:selector_action",
+                    "selector": "@e[type=area_effect_cloud,tag=angel.light_marker,limit=1,sort=nearest]",
+                    "bientity_action": {
+                        "type": "origins:target_action",
+                        "action": {
+                            "type": "origins:area_of_effect",
+                            "radius": 4,
+                            "bientity_action": {
+                                "type": "origins:target_action",
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "tag @s add angel.lighting_target"
+                                }
+                            },
+                            "bientity_condition": {
+                                "type": "origins:target_condition",
+                                "condition": {
+                                    "type": "origins:command",
+                                    "command": "execute if entity @s[tag=angel.immunetolighting]",
+                                    "compare_to": 0,
+                                    "comparison": "=="
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "tag @s remove angel.immunetolighting"
+                },
+                {
+                    "type": "origins:area_of_effect",
+                    "radius": 16,
+                    "bientity_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:damage",
+                                "amount": 12,
+                                "damage_type": "minecraft:magic"
+                            },
+                            {
+                                "type": "origins:target_action",
+                                "action": {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:health",
+                                        "compare_to": 0,
+                                        "comparison": "<="
+                                    },
+                                    "if_action": {
+                                        "type": "origins:execute_command",
+                                        "command": "function angel:light_drop"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "origins:target_action",
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "tag @s remove angel.lighting_target"
+                                }
+                            }
+                        ]
+                    },
+                    "bientity_condition": {
+                        "type": "origins:target_condition",
+                        "condition": {
+                            "type": "origins:command",
+                            "command": "execute if entity @s[tag=angel.lighting_target]",
+                            "compare_to": 0,
+                            "comparison": ">"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

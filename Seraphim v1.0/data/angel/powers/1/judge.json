@@ -1,0 +1,22 @@
+{
+    "condition": {
+        "type": "origins:resource",
+        "compare_to": 500,
+        "comparison": ">=",
+        "resource": "angel:global/holiness"
+    },
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:change_resource",
+        "resource": "angel:global/holiness",
+        "change": -500
+    },
+    "cooldown": 80,
+    "hud_render": {
+        "should_render": false
+    },
+    "key": {
+        "key": "key.origins.primary_active"
+    },
+    "hidden": true
+}
