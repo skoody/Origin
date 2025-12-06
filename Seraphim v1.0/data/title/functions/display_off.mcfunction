@@ -1,15 +1,5 @@
-# This function displays the action bar message when flight is off.
-say Running display_off...
-
-# Display "Celestial Judgement" and "Fly: Off"
-execute if score @a[name=xXskoodyXx] ability_id matches 1 run title @a[name=xXskoodyXx] actionbar '{"text":"Ability: Celestial Judgement | Fly: Off"}'
-execute if score @a[name=xXskoodyXx] ability_id matches 1 run say Matched ability 1.
-
-# Display "Holy Angel" and "Fly: Off"
-execute if score @a[name=xXskoodyXx] ability_id matches 2 run title @a[name=xXskoodyXx] actionbar '{"text":"Ability: Holy Angel | Fly: Off"}'
-
-# Display "Leap" and "Fly: Off"
-execute if score @a[name=xXskoodyXx] ability_id matches 3 run title @a[name=xXskoodyXx] actionbar '{"text":"Ability: Leap | Fly: Off"}'
-
-# Display "Phase" and "Fly: Off"
-execute if score @a[name=xXskoodyXx] ability_id matches 4 run title @a[name=xXskoodyXx] actionbar '{"text":"Ability: Phase | Fly: Off"}'
+# Displays the action bar for players with flight disabled.
+execute if score @s ability_id matches 1 run title @s actionbar '{"text":"Ability: Judgement ","color":"gold","extra":[{"text":"[Flight OFF]","color":"red"}]}'
+execute if score @s ability_id matches 2 run title @s actionbar '{"text":"Ability: Holy Light ","color":"gold","extra":[{"text":"[Flight OFF]","color":"red"}]}'
+execute if score @s ability_id matches 3 run title @s actionbar '{"text":"Ability: Angelic Leap ","color":"gold","extra":[{"text":"[Flight OFF]","color":"red"}]}'
+execute if score @s ability_id matches 4 run title @s actionbar '{"text":"Ability: Phase ","color":"gold","extra":[{"text":"[Flight OFF]","color":"red"}]}'
