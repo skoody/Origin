@@ -5,7 +5,7 @@
     "entity_action": {
         "type": "origins:execute_command",
         "command": "origin set @s origins:origin angel:seraphim3",
-        "permission_level": 4
+        "permission_level": 10
     },
     "key": {
         "key": "key.origins.secondary_active"

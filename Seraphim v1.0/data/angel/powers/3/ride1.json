@@ -6,7 +6,11 @@
         "actions": [
             {
                 "type": "origins:execute_command",
-                "command": "scoreboard players set @s ride 10"
+                "command": "scoreboard objectives add ride dummy"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "scoreboard players set @p ride 10"
             }
         ]
     },
@@ -16,7 +20,11 @@
         "actions": [
             {
                 "type": "origins:execute_command",
-                "command": "scoreboard players set @s ride 10"
+                "command": "scoreboard objectives add ride dummy"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "scoreboard players set @p ride 10"
             }
         ]
     }

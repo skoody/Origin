@@ -1,6 +1,6 @@
 {
     "name": "Holy Angel",
-    "description": " Undead mobs can sense your holy presence making them cower in fear of your judgement",
+    "description": "Undead mobs can sense your holy presence making them cower in fear of your judgement",
     "badges": [
         {
             "type": "origins:tooltip",
@@ -8,76 +8,72 @@
             "sprite": "origins:textures/gui/badge/info.png"
         }
     ],
-    "type": "origins:action_over_time",
-    "interval": 20,
-    "entity_action": {
-        "type": "origins:and",
-        "actions": [
-            {
-                "type": "origins:execute_command",
-                "permission_level": 4,
-                "command": "team add undead"
-            },
-            {
-                "type": "origins:execute_command",
-                "permission_level": 4,
-                "command": "team modify undead seeFriendlyInvisibles false"
-            },
-            {
-                "type": "origins:execute_command",
-                "permission_level": 4,
-                "command": "team join undead @s"
-            },
-            {
-                "type": "origins:execute_command",
-                "permission_level": 4,
-                "command": "team join undead @e[type=minecraft:zombie]"
-            },
-            {
-                "type": "origins:execute_command",
-                "permission_level": 4,
-                "command": "team join undead @e[type=minecraft:skeleton]"
-            },
-            {
-                "type": "origins:execute_command",
-                "permission_level": 4,
-                "command": "team join undead @e[type=minecraft:skeleton_horse]"
-            },
-            {
-                "type": "origins:execute_command",
-                "permission_level": 4,
-                "command": "team join undead @e[type=minecraft:wither_skeleton]"
-            },
-            {
-                "type": "origins:execute_command",
-                "permission_level": 4,
-                "command": "team join undead @e[type=minecraft:vex]"
-            },
-            {
-                "type": "origins:execute_command",
-                "permission_level": 4,
-                "command": "team join undead @e[type=minecraft:zoglin]"
-            },
-            {
-                "type": "origins:execute_command",
-                "permission_level": 4,
-                "command": "team join undead @e[type=minecraft:drowned]"
-            },
-            {
-                "type": "origins:execute_command",
-                "permission_level": 4,
-                "command": "team join undead @e[type=minecraft:zombie_horse]"
-            },
-            {
-                "type": "origins:execute_command",
-                "permission_level": 4,
-                "command": "team join undead @e[type=minecraft:zombified_piglin]"
-            },
-            {
-                "type": "origins:execute_command",
-                "permission_level": 4,
-                "command": "team join undead @e[type=minecraft:zombie_villager]"
-            }
-        ]
+    "type": "origins:multiple",
+    "team_logic": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                { "type": "origins:execute_command", "permission_level": 4, "command": "team add undead" },
+                { "type": "origins:execute_command", "permission_level": 4, "command": "team modify undead seeFriendlyInvisibles false" },
+                { "type": "origins:execute_command", "permission_level": 4, "command": "team join undead @s" },
+                { "type": "origins:execute_command", "permission_level": 4, "command": "team join undead @e[type=minecraft:zombie]" },
+                { "type": "origins:execute_command", "permission_level": 4, "command": "team join undead @e[type=minecraft:skeleton]" },
+                { "type": "origins:execute_command", "permission_level": 4, "command": "team join undead @e[type=minecraft:skeleton_horse]" },
+                { "type": "origins:execute_command", "permission_level": 4, "command": "team join undead @e[type=minecraft:wither_skeleton]" },
+                { "type": "origins:execute_command", "permission_level": 4, "command": "team join undead @e[type=minecraft:vex]" },
+                { "type": "origins:execute_command", "permission_level": 4, "command": "team join undead @e[type=minecraft:zoglin]" },
+                { "type": "origins:execute_command", "permission_level": 4, "command": "team join undead @e[type=minecraft:drowned]" },
+                { "type": "origins:execute_command", "permission_level": 4, "command": "team join undead @e[type=minecraft:zombie_horse]" },
+                { "type": "origins:execute_command", "permission_level": 4, "command": "team join undead @e[type=minecraft:zombified_piglin]" },
+                { "type": "origins:execute_command", "permission_level": 4, "command": "team join undead @e[type=minecraft:zombie_villager]" }
+            ]
+        }
+    },
+    "action_bar": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": { "type": "origins:origin", "origin": "angel:seraphim1", "layer": "origins:origin" },
+                    "action": {
+                        "type": "origins:if_else",
+                        "condition": { "type": "origins:power_active", "power": "angel:global/flight" },
+                        "if_action": { "type": "origins:execute_command", "command": "title @s actionbar '{\"text\":\"Ability: Judgement \",\"color\":\"gold\",\"extra\":[{\"text\":\"[Flight ON]\",\"color\":\"green\"}]}'", "permission_level": 4 },
+                        "else_action": { "type": "origins:execute_command", "command": "title @s actionbar '{\"text\":\"Ability: Judgement \",\"color\":\"gold\",\"extra\":[{\"text\":\"[Flight OFF]\",\"color\":\"red\"}]}'", "permission_level": 4 }
+                    }
+                },
+                {
+                    "condition": { "type": "origins:origin", "origin": "angel:seraphim2", "layer": "origins:origin" },
+                    "action": {
+                        "type": "origins:if_else",
+                        "condition": { "type": "origins:power_active", "power": "angel:global/flight" },
+                        "if_action": { "type": "origins:execute_command", "command": "title @s actionbar '{\"text\":\"Ability: Holy Light \",\"color\":\"gold\",\"extra\":[{\"text\":\"[Flight ON]\",\"color\":\"green\"}]}'", "permission_level": 4 },
+                        "else_action": { "type": "origins:execute_command", "command": "title @s actionbar '{\"text\":\"Ability: Holy Light \",\"color\":\"gold\",\"extra\":[{\"text\":\"[Flight OFF]\",\"color\":\"red\"}]}'", "permission_level": 4 }
+                    }
+                },
+                {
+                    "condition": { "type": "origins:origin", "origin": "angel:seraphim3", "layer": "origins:origin" },
+                    "action": {
+                        "type": "origins:if_else",
+                        "condition": { "type": "origins:power_active", "power": "angel:global/flight" },
+                        "if_action": { "type": "origins:execute_command", "command": "title @s actionbar '{\"text\":\"Ability: Angelic Leap \",\"color\":\"gold\",\"extra\":[{\"text\":\"[Flight ON]\",\"color\":\"green\"}]}'", "permission_level": 4 },
+                        "else_action": { "type": "origins:execute_command", "command": "title @s actionbar '{\"text\":\"Ability: Angelic Leap \",\"color\":\"gold\",\"extra\":[{\"text\":\"[Flight OFF]\",\"color\":\"red\"}]}'", "permission_level": 4 }
+                    }
+                },
+                {
+                    "condition": { "type": "origins:origin", "origin": "angel:seraphim4", "layer": "origins:origin" },
+                    "action": {
+                        "type": "origins:if_else",
+                        "condition": { "type": "origins:power_active", "power": "angel:global/flight" },
+                        "if_action": { "type": "origins:execute_command", "command": "title @s actionbar '{\"text\":\"Ability: Phase \",\"color\":\"gold\",\"extra\":[{\"text\":\"[Flight ON]\",\"color\":\"green\"}]}'", "permission_level": 4 },
+                        "else_action": { "type": "origins:execute_command", "command": "title @s actionbar '{\"text\":\"Ability: Phase \",\"color\":\"gold\",\"extra\":[{\"text\":\"[Flight OFF]\",\"color\":\"red\"}]}'", "permission_level": 4 }
+                    }
+                }
+            ]
+        }
     }
 }
